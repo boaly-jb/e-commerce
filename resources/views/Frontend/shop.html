@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop — Ghorebazar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="gb-header">
+  <div class="container">
+    <div class="gb-topbar row align-items-center g-3">
+      <div class="col-lg-3 col-6">
+        <a href="index.html" class="logo">Ghore<span>bazar</span></a>
+      </div>
+      <div class="col-lg-6 order-lg-2 order-3">
+        <div class="gb-search">
+          <input class="form-control input-search" type="text" placeholder="Search for groceries, spices, snacks…">
+          <i class="bi bi-search icon"></i>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6 order-lg-3 order-2 col-actions">
+        <div class="d-flex gap-2 justify-content-end align-items-center">
+          <a href="wishlist.html" class="gb-icon-btn d-none d-sm-inline-flex" aria-label="Wishlist"><i class="bi bi-heart"></i></a>
+          <a href="cart.html" class="gb-icon-btn" aria-label="Cart"><i class="bi bi-bag"></i><span class="gb-badge">3</span></a>
+          <a href="login.html" class="gb-icon-btn" aria-label="Account"><i class="bi bi-person"></i></a>
+          <button class="gb-icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-label="Menu"><i class="bi bi-list"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="gb-nav d-none d-lg-block">
+      <div class="gb-nav-list d-flex align-items-center flex-wrap">
+        <a href="index.html" class="">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="shop.html">Fresh Produce</a>
+        <a href="shop.html">Pantry</a>
+        <a href="shop.html">Snacks</a>
+        <a href="shop.html">Beverages</a>
+        <a href="about.html" class="">About</a>
+        <a href="contact.html" class="">Contact</a>
+        <a href="faq.html" class=" ms-auto">FAQ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="navMenu">
+  <div class="offcanvas-header"><span class="logo">Ghore<span style="color:var(--terracotta)">bazar</span></span><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+  <div class="offcanvas-body">
+    <nav class="gb-nav"><div class="gb-nav-list d-flex flex-column align-items-start">
+      <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="shop.html">Fresh Produce</a>
+      <a href="shop.html">Pantry</a><a href="shop.html">Snacks</a><a href="shop.html">Beverages</a>
+      <a href="about.html">About</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a>
+    </div></nav>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <div class="gb-breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span class="text-dark">Fresh Produce</span></div>
+  </div>
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="row g-4">
+        <aside class="col-lg-3">
+          <button class="btn btn-ghost w-100 d-lg-none mb-3"><i class="bi bi-funnel me-2"></i>Filters</button>
+          <div class="gb-sidebar">
+            <h6>Categories</h6>
+            <ul class="cat-tree">
+              <li><a href="#">Fresh Produce <span class="chip">124</span></a>
+                <ul><li><a href="#">Fruits</a></li><li><a href="#">Vegetables</a></li><li><a href="#">Herbs</a></li></ul>
+              </li>
+              <li><a href="#">Pantry <span class="text-muted-warm">218</span></a></li>
+              <li><a href="#">Dairy & Eggs <span class="text-muted-warm">64</span></a></li>
+              <li><a href="#">Beverages <span class="text-muted-warm">92</span></a></li>
+              <li><a href="#">Snacks <span class="text-muted-warm">86</span></a></li>
+              <li><a href="#">Wellness <span class="text-muted-warm">48</span></a></li>
+            </ul>
+            <h6>Price range</h6>
+            <div class="gb-range"><span class="gb-range-thumb-r"></span></div>
+            <div class="range-labels"><span>৳150</span><span>৳2,400</span></div>
+            <h6>Brand</h6>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="b0" checked><label class="form-check-label" for="b0">Ghorebazar Select</label></div><div class="form-check"><input class="form-check-input" type="checkbox" id="b1" checked><label class="form-check-label" for="b1">Village Harvest</label></div><div class="form-check"><input class="form-check-input" type="checkbox" id="b2" ><label class="form-check-label" for="b2">Meherpur Co-op</label></div><div class="form-check"><input class="form-check-input" type="checkbox" id="b3" ><label class="form-check-label" for="b3">Sundarban Wild</label></div><div class="form-check"><input class="form-check-input" type="checkbox" id="b4" ><label class="form-check-label" for="b4">Chattogram Roasters</label></div>
+            <h6>Availability</h6>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="a1" checked><label class="form-check-label" for="a1">In stock</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" id="a2"><label class="form-check-label" for="a2">On sale</label></div>
+            <button class="btn btn-terracotta w-100 mt-4">Apply Filters</button>
+          </div>
+        </aside>
+        <div class="col-lg-9">
+          <div class="shop-topbar">
+            <span class="count">Showing <strong>1 – 12</strong> of 124 items</span>
+            <div class="d-flex gap-2 align-items-center">
+              <label class="text-muted-warm small">Sort by</label>
+              <select class="form-select form-select-sm" style="width:auto"><option>Featured</option><option>Price: Low to High</option><option>Price: High to Low</option><option>Newest</option></select>
+            </div>
+          </div>
+          <div class="row g-4"><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Mangoes" alt="Alphonso Mangoes">
+    <span class="badge-discount">-20%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Fresh Produce</span>
+    <span class="p-name">Alphonso Mangoes</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳480</span><span class="price-old">৳600</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Basmati+Rice" alt="Aromatic Basmati Rice">
+    <span class="badge-discount">-14%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Aromatic Basmati Rice</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳1250</span><span class="price-old">৳1450</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Mustard+Oil" alt="Cold-Pressed Mustard Oil">
+    
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Cold-Pressed Mustard Oil</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳520</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Honey" alt="Organic Honey Jar">
+    <span class="badge-discount">-19%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Organic Honey Jar</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳890</span><span class="price-old">৳1100</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Ghee" alt="Handmade Ghee">
+    
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Dairy</span>
+    <span class="p-name">Handmade Ghee</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳1450</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Spices" alt="Assorted Spice Set">
+    <span class="badge-discount">-19%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Assorted Spice Set</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳720</span><span class="price-old">৳890</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Farm+Eggs" alt="Fresh Farm Eggs">
+    
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Dairy</span>
+    <span class="p-name">Fresh Farm Eggs</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳180</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Cashews" alt="Roasted Cashews">
+    <span class="badge-discount">-11%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Snacks</span>
+    <span class="p-name">Roasted Cashews</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳640</span><span class="price-old">৳720</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Mangoes" alt="Alphonso Mangoes">
+    <span class="badge-discount">-20%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Fresh Produce</span>
+    <span class="p-name">Alphonso Mangoes</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳480</span><span class="price-old">৳600</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Basmati+Rice" alt="Aromatic Basmati Rice">
+    <span class="badge-discount">-14%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Aromatic Basmati Rice</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳1250</span><span class="price-old">৳1450</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Mustard+Oil" alt="Cold-Pressed Mustard Oil">
+    
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Cold-Pressed Mustard Oil</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳520</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div><div class="col-lg-4 col-md-6 col-12"><div class="product-card">
+  <div class="p-img">
+    <img src="https://placehold.co/400x400/f4dccd/C96F4A?text=Honey" alt="Organic Honey Jar">
+    <span class="badge-discount">-19%</span>
+    <span class="p-wish"><i class="bi bi-heart"></i></span>
+  </div>
+  <div class="p-body">
+    <span class="p-cat">Pantry</span>
+    <span class="p-name">Organic Honey Jar</span>
+    <span class="p-rate"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted-warm">(128)</span></span>
+    <div class="p-price"><span class="price-new">৳890</span><span class="price-old">৳1100</span></div>
+    <button class="p-cart"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button>
+  </div>
+</div></div></div>
+          <nav class="mt-5 d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">…</a></li>
+              <li class="page-item"><a class="page-link" href="#">11</a></li>
+              <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="gb-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-12">
+        <a href="index.html" class="logo">Ghore<span>bazar</span></a>
+        <p>Fresh groceries and pantry staples, thoughtfully sourced and delivered to your door across the country.</p>
+        <div class="social">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Quick Links</h5>
+        <a href="about.html">About Us</a><a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a><a href="shop.html">Shop</a><a href="profile.html">My Account</a>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h5>Categories</h5>
+        <a href="shop.html">Fresh Produce</a><a href="shop.html">Pantry</a>
+        <a href="shop.html">Snacks</a><a href="shop.html">Beverages</a><a href="shop.html">Household</a>
+      </div>
+      <div class="col-lg-4 col-12">
+        <h5>Get in Touch</h5>
+        <a href="#"><i class="bi bi-geo-alt me-2"></i>House 24, Road 11, Banani, Dhaka 1213</a>
+        <a href="#"><i class="bi bi-telephone me-2"></i>+880 1700 000 000</a>
+        <a href="#"><i class="bi bi-envelope me-2"></i>hello@ghorebazar.com</a>
+        <a href="#"><i class="bi bi-clock me-2"></i>Sun – Fri, 9:00 – 21:00</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Ghorebazar. All rights reserved.</span>
+      <div class="pay"><span>VISA</span><span>Mastercard</span><span>bKash</span><span>Nagad</span><span>COD</span></div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>

@@ -1,0 +1,54 @@
+/* Ghorebazar — Responsive */
+@media (max-width:1199.98px){
+  h1{font-size:2.25rem}
+  .gb-hero{padding:60px 40px}
+  .gb-hero h1{font-size:2.75rem}
+  .gb-hero .hero-img{height:340px}
+  .err-code{font-size:9rem}
+}
+@media (max-width:991.98px){
+  section{padding:72px 0}
+  .gb-hero{padding:48px 28px}
+  .gb-hero h1{font-size:2.25rem}
+  .gb-hero .hero-img{height:280px;margin-top:24px}
+  .about-hero{padding:64px 32px}
+  .about-hero h1{font-size:2.5rem}
+  .sticky-summary{position:static}
+  .gb-nav-list{flex-direction:column;align-items:flex-start!important;gap:6px}
+  .gb-nav-list a{padding:8px 0}
+  .gb-nav-list a.active::after{display:none}
+}
+@media (max-width:767.98px){
+  section{padding:56px 0}
+  h1{font-size:2rem}
+  h2{font-size:1.6rem}
+  .gb-hero{padding:40px 24px;border-radius:16px}
+  .gb-hero h1{font-size:1.9rem}
+  .gb-hero .hero-img{height:220px}
+  .newsletter{padding:44px 24px}
+  .newsletter .form-inline{flex-direction:column;background:transparent;padding:0;gap:10px}
+  .newsletter input{background:#fff;padding:.75rem 1.2rem}
+  .newsletter .btn{width:100%}
+  .gb-footer{text-align:center;padding-top:48px}
+  .gb-footer .social{justify-content:center}
+  .gb-footer .bottom{justify-content:center;text-align:center}
+  .gb-footer .col-6{margin-bottom:24px;text-align:left}
+  .gb-topbar .col-actions{justify-content:flex-end}
+  .gb-search{margin:14px 0 0}
+  /* Cart -> card layout */
+  .cart-row{flex-wrap:wrap}
+  .cart-row .cart-mid{flex:1 1 60%}
+  .cart-row .cart-controls{flex:1 1 100%;display:flex;justify-content:space-between;align-items:center;margin-top:8px;border-top:1px solid var(--border);padding-top:12px}
+  .pd-price .new{font-size:1.6rem}
+  .err-code{font-size:6rem}
+  .about-hero h1{font-size:2rem}
+  .auth-card{padding:32px 24px}
+  .profile-panel{padding:22px}
+}
+@media (max-width:575.98px){
+  section{padding:44px 0}
+  .gb-hero{padding:32px 20px}
+  .promo-card{padding:24px;min-height:160px}
+  .newsletter h2{font-size:1.4rem}
+  .order-tbl th:nth-child(2),.order-tbl td:nth-child(2){display:none}
+}
