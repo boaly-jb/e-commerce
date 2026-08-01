@@ -11,16 +11,16 @@ class AdminHomeController extends Controller
 
 {
 
-
-
-
-
+//  Home page for admin dashboard
      public function index()
     {
-        return view('home');
+        return view('Admin.AdminDashboard.index');
     }
 
-
-    
+// Admin Product Category page
+    public function categories()
+    {
+        return view('Admin.AdminProduct.adminProduct');
+    }
 
 }

@@ -1,12 +1,12 @@
 @extends('Layouts.FrontendLayouts')
 @section('title' )
-Ekhoni-Buy
+Ekhoni-Buy.Com
 @endsection
 
 
 @section('content')
 <main>
-    <section style="padding-top:20px">
+    <section style="padding-top:20px"> 
         <div class="container">
             <div class="gb-hero">
                 <div class="row align-items-center g-4">
