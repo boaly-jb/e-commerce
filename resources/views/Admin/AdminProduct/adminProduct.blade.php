@@ -30,12 +30,12 @@
             </table>
         </div>
         <div class="col-lg-3 bg-white p-4 shadow-sm rounded">
-            <form action="" method="POST">
+            <form action="{{ route('admin.store.category') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <!-- Category Name Field -->
                 <div class="mb-3">
                     <label for="categoryName" class="form-label fw-semibold">Category Name</label>
-                    <input type="text" class="form-control" id="categoryName" name="name" placeholder="Enter category name" required>
+                    <input type="text" class="form-control" id="categoryName" name="category" placeholder="Enter category name" required>
                 </div>
 
                 <!-- Slug Field -->
@@ -48,7 +48,7 @@
                 <!-- image  -->
                 <div class="mb-3">
                     <label for="categoryImage" class="form-label fw-semibold">Image</label>
-                    <input type="file" class="form-control" id="categoryImage" name="image">
+                    <input type="file" class="form-control" id="categoryImage" name="category_image">
                 </div>
 
                
@@ -65,6 +65,7 @@
                         <i class="fa-solid fa-plus me-1"></i> Save Category
                     </button>
                 </div>
+                
             </form>
         </div>
 
