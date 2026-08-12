@@ -24,7 +24,24 @@
                     </tr>
                 </thead>
                 <tbody>
-               
+                    @foreach ($categories as $key => $category)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $category->category }}</td>
+                            <td>{{ $category->slug }}</td>
+                            <td>{{ $category->category_image }}</td>
+                            <td>{{ $category->description }}</td>
+                            <td>
+                                <a href="{{ route('admin.category.edit') }}" class="btn btn-sm btn-primary">Edit</a>
+                                {{-- <form action="" method="POST" style="display: inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
+                                </form> --}}
+                           
+                        </tr>
+                    
+                    @endforeach
                 </tbody>
 
             </table>
@@ -45,12 +62,13 @@
                 </div>
 
 
+                
                 <!-- image  -->
                 <div class="mb-3">
                     <label for="categoryImage" class="form-label fw-semibold">Image</label>
                     <input type="file" class="form-control" id="categoryImage" name="category_image">
                 </div>
-
+                   
                
 
                 <!-- Description Field -->
@@ -64,8 +82,7 @@
                     <button type="submit" class="btn btn-primary py-2 fw-semibold">
                         <i class="fa-solid fa-plus me-1"></i> Save Category
                     </button>
-                </div>
-                
+                </div>           
             </form>
         </div>
 

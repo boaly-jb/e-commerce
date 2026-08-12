@@ -15,45 +15,42 @@ class AdminHomeController extends Controller
     //  Home page for admin dashboard
     public function index()
     {
+        // fatch all categry data from database
+       
         return view('Admin.AdminDashboard.index');
     }
 
     // Admin Product Category page
     public function categories()
     {
-        return view('Admin.AdminProduct.adminProduct');
+         $categories = Category::latest()->get();
+        return view('Admin.AdminProduct.adminProduct' , compact('categories'));
     }
 
     //  storeCategory 
     public function storeCategory(Request $request)
     {
 
-    //  dd($request->all());
         // Validate the incoming request data
         $request->validate([
-            'category' => 'required',
+            'category' => 'nullable',
             'slug' => 'nullable',
             'category_image' => 'nullable|image|mimes:jpeg,png,jpg',
             'description' => 'nullable|string',
         ]);
 
-       
-
-        // Handle the uploaded image if it exists
-        if ($request->hasFile('category_image')) {
-            $imagePath = $request->file('category_image')->store('categories', 'public');
-        } else {
-            $imagePath = null; // or set a default image path if needed
-        }
+    
 
         // Store the category in the database (assuming you have a Category model)
         Category::create([
-            'category' => $request->category_name,
+            'category' => $request->category,
             'slug' => $request->slug,
-            'category_image' => $imagePath,
+            'category_image' => $request->category_image,
             'description' => $request->description,
         ]);
 
-        // return redirect()->back();
+        return redirect()->back();
     }
+
+    
 }
