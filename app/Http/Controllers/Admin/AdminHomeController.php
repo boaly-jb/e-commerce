@@ -21,35 +21,46 @@ class AdminHomeController extends Controller
     }
 
     // Admin Product Category page
-    public function categories()
+    public function categories($id = null)
     {
-         $categories = Category::latest()->get();
-        return view('Admin.AdminProduct.adminProduct' , compact('categories'));
+        $editCategory = $id ? Category::find($id) : null;
+
+        $categories = Category::latest()->get();
+        return view('Admin.AdminProduct.productAdd' , compact('categories', 'editCategory'));
     }
 
     //  storeCategory 
-    public function storeCategory(Request $request)
+    public function storeCategory(Request $request , $id = null)
     {
 
         // Validate the incoming request data
         $request->validate([
-            'category' => 'nullable',
+            'category' => 'required',
             'slug' => 'nullable',
             'category_image' => 'nullable|image|mimes:jpeg,png,jpg',
             'description' => 'nullable|string',
+            'status' => 'nullable|in:1,0',
         ]);
 
     
 
         // Store the category in the database (assuming you have a Category model)
-        Category::create([
-            'category' => $request->category,
-            'slug' => $request->slug,
-            'category_image' => $request->category_image,
-            'description' => $request->description,
+        Category::updateOrCreate(
+            ['id' => $id],
+            [
+                'category' => $request->category,
+                'slug' => $request->slug,
+                'category_image' => $request->category_image,
+                'description' => $request->description,
+                'status' => $request->status,
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with( 'msg',
+           [
+             'type' => 'success', 
+            'content' => 'Category created successfully!' 
+            ]
+        );
     }
 
     
