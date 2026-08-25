@@ -156,7 +156,7 @@
                     <td>
                         <div class="d-flex align-items-center">
                             <div class="rounded border bg-light p-1 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
-                                <span class="text-muted small fw-bold">IMG</span>
+                                <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}" class="img-fluid" style="max-width: 100%; max-height: 100%;">
                             </div>
                             <div>
                                 <a href="#" class="fw-semibold text-dark text-decoration-none d-block">
