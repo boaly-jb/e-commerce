@@ -17,6 +17,8 @@
     @endif
 @endpush
 
+{{--  This is the category managment section --}}
+
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
