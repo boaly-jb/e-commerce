@@ -23,7 +23,6 @@ class AdminProductController extends Controller
 
     public function storeProduct(Request $request, $id = null){
 
-     dd($request->all());    
         // Logic for storing product
         $request->validate([
             'product_name' => 'required',
@@ -42,8 +41,9 @@ class AdminProductController extends Controller
             'product_image' => 'nullable', 
         ]);
 
+        $id = $id ?? $request->id;
         // image upload logic
-      if('product_image') 
+        // $ProductImage = $request->profile_image->store('product', 'public');
 
         StoreProduct::updateOrCreate([
             'id' => $id, 
@@ -60,11 +60,11 @@ class AdminProductController extends Controller
             'status' => $request->status,
             'featured' => $request->featured,
             'tranding' => $request->tranding,
-            'product_image' => $request->product_image,
+            // 'product_image' => $ProductImage,
         ]);
 
       $msg = $id ? 'Product updated successfully.' : 'Product created successfully.';
-        return redirect()->back()->with('msg', 
+        return redirect()->route('admin.products')->with('msg', 
     [
         'type' => 'success',
         'content' => $msg

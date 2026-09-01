@@ -18,18 +18,8 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
-          
-            <!-- Nav Item - Product Category -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.categories') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Product Category</span></a>
-            </li>
-
-            <!-- Divider -->
+        
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -46,7 +36,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
+
+                        <a class="collapse-item" href="{{ route('admin.categories') }}">Category</a>
                         <a class="collapse-item" href="{{ route('admin.form.product') }}">Add Product</a>
                         <a class="collapse-item" href="{{ route('admin.products') }}">All Products</a>
                     </div>
