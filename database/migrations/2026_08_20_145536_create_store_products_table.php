@@ -22,8 +22,8 @@ return new class extends Migration
             $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->boolean('status')->default(1);
-            $table->boolean('featured')->default(0);
-            $table->boolean('tranding')->default(0);
+            $table->boolean('featured')->nullable()->default(0);
+            $table->boolean('tranding')->nullable()->default(0);
             $table->string('product_image')->nullable();
             $table->timestamps(); 
         });

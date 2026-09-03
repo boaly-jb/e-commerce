@@ -43,13 +43,8 @@ class AdminProductController extends Controller
 
         $id = $id ?? $request->id; // Use the provided ID or the one from the request
         $productImage = $request->product_image->store('product', 'public');
-        if($productImage){
-            $productImage = $request->$productImage;
-        } else {
-            $productImage = $id ? StoreProduct::find($id)->product_image : null; // previous image if exists, otherwise null
-        }
 
-
+    
         StoreProduct::updateOrCreate([
             'id' => $id, 
         ],
@@ -66,6 +61,9 @@ class AdminProductController extends Controller
             'featured' => $request->featured ?? 0, // Default to 0 if not provided
             'tranding' => $request->tranding ?? 0, // Default to 0 if not provided
             'product_image' => $productImage,
+            'featured' => $request->featured,
+            'tranding' => $request->tranding,
+            // 'product_image' => $ProductImage,
         ]);
 
       $msg = $id ? 'Product updated successfully.' : 'Product created successfully.';
