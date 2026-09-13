@@ -25,5 +25,7 @@ Route::get('/from/product/{id?}', [AdminProductController::class, 'formProduct']
 Route::post('/store/product/{id?}', [AdminProductController::class, 'storeProduct'])->name('store.product');
 // All Product Route
 Route::get('/products', [AdminProductController::class, 'allProducts'])->name('products');
+// Delete Product Route
+Route::POST('/delete/product/{id}', [AdminProductController::class, 'deleteProduct'])->name('delete.product');
 
 

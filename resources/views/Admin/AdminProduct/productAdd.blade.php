@@ -40,7 +40,9 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $category->category }}</td>
                             <td>{{ $category->slug }}</td>
-                            <td>{{ $category->category_image }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $category->category_image) }}" alt="{{ $category->category }}" class="img-thumbnail" style="max-width: 100px; max-height: 100px;">
+                            </td>
                             <td>{{ $category->description }}</td>
                             <td>{{ $category->status ? 'Active' : 'Inactive' }}</td>
                             <td>

@@ -16,7 +16,6 @@ class AdminHomeController extends Controller
     public function index()
     {
         // fatch all categry data from database
-       
         return view('Admin.AdminDashboard.index');
     }
 
@@ -42,7 +41,11 @@ class AdminHomeController extends Controller
             'status' => 'nullable|in:1,0',
         ]);
 
-    
+        $id = $id ?? $request->id;
+
+        //  Category Image Logic
+        $oldCategoryImage = $id ? Category::find($id)->category_image : null;
+        $categoryImage = $request->hasFile('category_image') ? $request->file('category_image')->store('categories', 'public') : null;
 
         // Store the category in the database (assuming you have a Category model)
         Category::updateOrCreate(
@@ -50,9 +53,9 @@ class AdminHomeController extends Controller
             [
                 'category' => $request->category,
                 'slug' => $request->slug,
-                'category_image' => $request->category_image,
                 'description' => $request->description,
                 'status' => $request->status,
+                'category_image' => $categoryImage, 
         ]);
 
         return redirect()->back()->with( 'msg',

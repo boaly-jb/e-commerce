@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\StoreProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
@@ -42,8 +43,18 @@ class AdminProductController extends Controller
         ]);
 
         $id = $id ?? $request->id;
-        // image upload logic
-        // $ProductImage = $request->profile_image->store('product', 'public');
+        // If Old Image exists, then use it, otherwise use the new image uploaded by user. If no image is uploaded, then set it to null.
+        $oldPreviousImage = StoreProduct::find($id)->product_image ?? null;
+        $ProductImage = $request->hasFile('product_image') ?
+            $request->file('product_image')->store('products', 'public') : ($oldPreviousImage ?? null);
+
+        // Now delete if the old image exists and a new image is uploaded
+        if($request->hasFile('product_image') && $oldPreviousImage) {
+            // jodi database e image thake and user new image upload kore, tahole old image delete hobe
+            if(Storage::disk('public')->exists($oldPreviousImage)) {
+                Storage::disk('public')->delete($oldPreviousImage);
+            }
+        }
 
         StoreProduct::updateOrCreate([
             'id' => $id, 
@@ -60,7 +71,7 @@ class AdminProductController extends Controller
             'status' => $request->status,
             'featured' => $request->featured,
             'tranding' => $request->tranding,
-            // 'product_image' => $ProductImage,
+            'product_image' => $ProductImage,
         ]);
 
       $msg = $id ? 'Product updated successfully.' : 'Product created successfully.';
@@ -71,4 +82,25 @@ class AdminProductController extends Controller
     ]);
         // return redirect()->route('form.product')->with('success', 'Product created successfully.');
     }
+
+
+    // Admin Delete Product
+    public function deleteProduct(Request $request, $id=null){
+
+    //  Permanently delete the product from the database
+        $product = StoreProduct::find($id);
+        if($product->product_image) {
+             if(Storage::disk('public')->exists($product->product_image)) {
+                Storage::disk('public')->delete($product->product_image);
+            }
+        }
+
+        StoreProduct::find($id)->delete($request->all());
+        return redirect()->route('admin.products')->with('msg',
+        [
+            'type' => 'success',
+            'content' => 'Product deleted successfully.'
+        ]);
+    }      
+
 }

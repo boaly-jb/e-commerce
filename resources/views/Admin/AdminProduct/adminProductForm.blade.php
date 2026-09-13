@@ -2,7 +2,6 @@
 
 @section('title', 'Admin Product Category')
 
-
 @section('content')
 
     @push('scripts')

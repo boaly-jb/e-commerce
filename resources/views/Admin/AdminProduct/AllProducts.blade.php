@@ -156,7 +156,13 @@
                     <td>
                         <div class="d-flex align-items-center">
                             <div class="rounded border bg-light p-1 me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; flex-shrink: 0;">
-                                <span class="text-muted small fw-bold">IMG</span>
+                                <span class="text-muted small fw-bold ">
+                                  @if($product->product_image)
+                                    <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->product_name }}" class="img-fluid rounded" style="max-width: 100%; max-height: 100%;">
+                                @else
+                                    <img src="{{ asset('frouts_placeholder.jpg') }}" alt="{{ $product->product_name }}" class="img-fluid rounded" style="max-width: 100%; max-height: 100%;">
+                                @endif
+                                </span>
                             </div>
                             <div>
                                 <a href="#" class="fw-semibold text-dark text-decoration-none d-block">
@@ -191,7 +197,11 @@
                     <td class="text-end pe-4">
                         <div class="btn-group btn-group-sm" role="group">
                             <a href="{{ route('admin.form.product', $product->id) }}" class="btn btn-outline-primary" title="Edit Product">Edit</a>
-                            <button type="button" class="btn btn-outline-danger" title="Delete Product">Delete</button>
+                            {{-- Delete Form --}}
+                            <form action="{{ route('admin.delete.product', $product->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger" title="Delete Product" >Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
