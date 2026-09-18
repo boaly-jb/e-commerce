@@ -185,11 +185,15 @@ section {
   /* z-index: 50 */
 }
 
-.gb-header .logo {
+/* .gb-header .logo {
   font-family: 'Fraunces', serif;
   font-weight: 700;
   font-size: 1.6rem;
   color: var(--charcoal)
+} */
+.gb-header .logo img{
+  height: 50px;
+  width: auto;
 }
 
 .gb-header .logo span {
@@ -285,6 +289,151 @@ section {
   height: 2px;
   background: var(--terracotta);
 }
+
+/* Herror Slider Style Start  */
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+    max-width: 975px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* Background Image */
+
+.hero-slide img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+
+/* Dark Overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 2;
+}
+
+
+/* Content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 1200px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    color: white;
+}
+
+
+.hero-content span {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero-content h1 {
+    max-width: 700px;
+
+    font-size: 65px;
+
+    line-height: 1.1;
+
+    margin: 0 0 20px;
+}
+
+
+.hero-content h1 strong {
+    display: block;
+
+    color: #00c6ff;
+}
+
+
+.hero-content p {
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* Button */
+
+.hero-btn {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: #00c6ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.hero-btn:hover {
+    background: #009ed0;
+
+    transform: translateY(-2px);
+}
+/* Herror Slider Style END  */
 
 /* Hero */
 .gb-hero {

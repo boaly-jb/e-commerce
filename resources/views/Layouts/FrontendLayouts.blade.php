@@ -5,6 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>@yield('title')</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,7 +25,9 @@
         <div class="container">
             <div class="p-2 row align-items-center">
                 <div class="col-lg-3 col-6">
-                    <a href="" class="logo">Akhoni<span>Buy</span></a>
+                    <a href="" class="logo">
+                        <img src="{{ asset('omli.jpeg') }}" alt="Omli" class="img-fluid">
+                    </a>
                 </div>
                 <div class="col-lg-6 order-lg-2 order-3">
                     <div class="gb-search">
@@ -117,6 +123,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ asset('Frontend/assets/js/script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
