@@ -8,46 +8,44 @@
     <main>
 
         {{-- herror Slider Start   --}}
-        <div class="container p-3">
-            <div class="row">
-                <div class="col-lg-8 ">
+        <div class="container p-3 slider_container">
+            <div class="row ">
+                <div class="col-lg-8 p-0">
                     <section class="hero-section p-0">
 
-                        <div class="swiper heroSwiper">
+                        <div class="swiper heroSwiper ">
 
                             <div class="swiper-wrapper">
 
                                 <!-- Slide 1 -->
                                 <div class="swiper-slide hero-slide">
-                                    <img src="images/hero-1.jpg" alt="Hero Image">
+                                    <img src="https://i.pinimg.com/736x/c1/46/8e/c1468eaf77823e4310eff4016e1c46e4.jpg"
+                                        alt="Hero Image">
 
-                                    <div class="hero-overlay"></div>
-
+                                    {{-- <div class="hero-overlay"></div>
                                     <div class="hero-content">
                                         <span>WELCOME TO OUR WEBSITE</span>
-
                                         <h1>
                                             Build Your
                                             <strong>Digital Future</strong>
                                         </h1>
-
                                         <p>
                                             We create modern, fast and professional
                                             websites for your business.
                                         </p>
-
                                         <a href="#" class="hero-btn">
                                             Get Started
                                         </a>
-                                    </div>
+                                    </div> --}}
+
                                 </div>
 
 
                                 <!-- Slide 2 -->
                                 <div class="swiper-slide hero-slide">
-                                    <img src="images/hero-2.jpg" alt="Web Development">
+                                    <img src="https://i.pinimg.com/1200x/88/ac/69/88ac69aaab0291af426dd6ef5a3c4298.jpg" alt="Web Development">
 
-                                    <div class="hero-overlay"></div>
+                                    {{-- <div class="hero-overlay"></div>
 
                                     <div class="hero-content">
                                         <span>WEB DEVELOPMENT</span>
@@ -65,15 +63,15 @@
                                         <a href="#" class="hero-btn">
                                             Explore Services
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
 
 
                                 <!-- Slide 3 -->
                                 <div class="swiper-slide hero-slide">
-                                    <img src="images/hero-3.jpg" alt="Digital Solutions">
+                                    <img src="https://i.pinimg.com/736x/09/9a/2d/099a2d250c3930b9602d96181a473603.jpg" alt="Digital Solutions">
 
-                                    <div class="hero-overlay"></div>
+                                    {{-- <div class="hero-overlay"></div>
 
                                     <div class="hero-content">
                                         <span>DIGITAL SOLUTIONS</span>
@@ -91,7 +89,8 @@
                                         <a href="#" class="hero-btn">
                                             Contact Us
                                         </a>
-                                    </div>
+                                    </div> --}}
+
                                 </div>
 
                             </div>
@@ -108,8 +107,12 @@
 
                     </section>
                 </div>
-            <div class="col-lg-4"></div>
-             </div>
+                <div class="col-lg-4  d-lg-block d-sm-none">
+                    <img class="ads_image"
+                        src="https://scontent.fdac157-1.fna.fbcdn.net/v/t39.30808-6/796328265_122114298291439461_3351612342778982763_n.jpg?stp=dst-jpg_tt6&cstp=mx1254x1254&ctp=s1254x1254&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6D0534rygnEQ7kNvwHos6zo&_nc_oc=AdpIpZ_Dc77--hHsNub2R42ZR4mb8Z-lVkmSQhUCpAGjfmi0e1nC4D38ruYuEjs8sfw&_nc_zt=23&_nc_ht=scontent.fdac157-1.fna&_nc_gid=jyaav_E4ArEW38MFgdmKiw&_nc_ss=7b2a8&oh=00_AQLUIflyUHYnRGzEVmr9sZTo7TbZ4v1vUVEUFvFB0DAIpQ&oe=6AB87CDD"
+                        alt="">
+                </div>
+            </div>
         </div>
 
 
@@ -138,7 +141,7 @@
             </div>
         </div>
     </section> --}}
-    
+
         <section>
             <div class="container">
                 <div class="d-flex justify-content-between align-items-start flex-wrap ">
@@ -149,62 +152,22 @@
                     {{-- <a href="shop.html" class="btn btn-ghost">View all <i class="bi bi-arrow-right ms-2"></i></a> --}}
                 </div>
                 <div class="row g-3">
-                    <div class="col-lg col-md-3 col-6">
+                    @forelse ($categories as $category)
+                        <div class="col-lg-2 col-md-3 col-6">
                         <a href="shop.html" class="cat-card d-block">
                             <div class="cat-icon"><i class="bi bi-basket3"></i></div>
-                            <div class="cat-name">Fresh Produce</div>
-                            <div class="cat-count">124 items</div>
+                            <div class="cat-name">{{ $category->category }}</div>
+                            <div class="cat-count">123 items</div>
                         </a>
                     </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-cup-hot"></i></div>
-                            <div class="cat-name">Pantry</div>
-                            <div class="cat-count">218 items</div>
+                    @empty
+                         <div class="col-lg-2 col-md-3 col-6">
+                            <p>No categories available.</p>
                         </a>
                     </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-egg"></i></div>
-                            <div class="cat-name">Dairy & Eggs</div>
-                            <div class="cat-count">64 items</div>
-                        </a>
-                    </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-cup-straw"></i></div>
-                            <div class="cat-name">Beverages</div>
-                            <div class="cat-count">92 items</div>
-                        </a>
-                    </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-heart-pulse"></i></div>
-                            <div class="cat-name">Wellness</div>
-                            <div class="cat-count">48 items</div>
-                        </a>
-                    </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-flower1"></i></div>
-                            <div class="cat-name">Spices</div>
-                            <div class="cat-count">76 items</div>
-                        </a>
-                    </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-box-seam"></i></div>
-                            <div class="cat-name">Household</div>
-                            <div class="cat-count">110 items</div>
-                        </a>
-                    </div>
-                    <div class="col-lg col-md-3 col-6">
-                        <a href="shop.html" class="cat-card d-block">
-                            <div class="cat-icon"><i class="bi bi-gift"></i></div>
-                            <div class="cat-name">Gift Boxes</div>
-                            <div class="cat-count">22 items</div>
-                        </a>
-                    </div>
+                    @endforelse
+                    
+                    
                 </div>
             </div>
         </section>
